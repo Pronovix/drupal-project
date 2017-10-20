@@ -13,14 +13,14 @@ default:
     Behat\MinkExtension:
       goutte: ~
       selenium2:
-        wd_host: http://pxproject.dev:4444/wd/hub
-      base_url: http://pxproject.dev
+        wd_host: http://pxproject.test:4444/wd/hub
+      base_url: http://pxproject.test
       javascript_session: selenium2
       browser_name: phantomjs
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: drupal
       drush:
-        alias: pxproject.dev
+        alias: pxproject.test
       drupal:
         drupal_root: /var/www/drupalvm/docroot
