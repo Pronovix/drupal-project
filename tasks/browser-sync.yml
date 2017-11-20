@@ -1,0 +1,11 @@
+---
+- name: Check if Browsersync config.json exists.
+  stat: path={{ browsersync_config_target }}/config.json
+  register: config_file
+
+- name: Create configuration for Browsersync.
+  template:
+    src: ../../templates/browsersync.config.json.j2
+    dest: "{{ browsersync_config_target }}/browsersync.config.json"
+    mode: 0644
+  when: config_file.stat.exists == False and browsersync_config_target != ""
