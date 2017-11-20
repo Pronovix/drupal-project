@@ -291,6 +291,14 @@ npm_config_prefix: "/home/{{ drupalvm_user }}/.npm-global"
 # Specify an array of package.json paths if you would like to install packages
 # during provisioning.
 npm_package_json_paths: []
+# Browsersync configuration.
+# You can configure which port should be forwarded for Browsersync (e.g. "8080").
+browsersync_port: ""
+# You can specify the directory where the Browsersync config file should be
+# created based on browsersync.config.json.j2 template, which can be used by
+# third party tools like Gulp or Grunt. If you would like to use Browsersync
+# globally, add it to the nodejs_npm_global_packages variable.
+browsersync_config_target: ""
 
 # Ruby Configuration (if enabled above).
 ruby_install_gems_user: "{{ drupalvm_user }}"

@@ -28,6 +28,10 @@ Vagrant.configure('2') do |config|
     # Ensure that commands executed in the Drupal root by default.
     config.exec.commands '*', directory: vconfig.include?('drupal_core_path') ? vconfig['drupal_core_path'] : dconfig['drupal_core_path']
   end
+  # Port forwarding for Browsersync.
+  unless dconfig['browsersync_port'].empty?
+    config.vm.network :forwarded_port, guest: dconfig['browsersync_port'], host: dconfig['browsersync_port']
+  end
 end
 
 # Load the real Vagrantfile

@@ -27,6 +27,10 @@ For further information about these projects check the project pages.
 * You can use `vagrant ssh` to SSH into a running Vagrant machine.
 * You can specify paths for `package.json` files in `npm_package_json_paths` variable of `./config/config.yml` file for 
   installing node.js packages while provisioning.
+* You can easily enable Browsersync within the VM by specifying the `browsersync_port` and the `browsersync_config_target` 
+variables in `./config/config.yml`. If you would like to use it globally, just add it to the globally installed Node.js packages.
+If you would like to use in from Gulp (or Grunt), you can include the necessary settings in `gulpfile.js` from the generated 
+`browsersync.config.json` file. In the browser visit `vagrant_hostname`:`browsersync_port` (e.g. http://pxproject.test:8080) to reach the Browsersync server.
   
 ## Working with an already existing project
 
